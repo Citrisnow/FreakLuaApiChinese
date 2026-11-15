@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freak Engine Chinese API</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/markdown.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+    <!-- 背景圆形装饰（12 个） -->
+    <div class="bg-circles" aria-hidden="true">
+        <span class="c1"></span>
+        <span class="c2"></span>
+        <span class="c3"></span>
+        <span class="c4"></span>
+        <span class="c5"></span>
+        <span class="c6"></span>
+        <span class="c7"></span>
+        <span class="c8"></span>
+        <span class="c9"></span>
+        <span class="c10"></span>
+        <span class="c11"></span>
+        <span class="c12"></span>
+    </div>
+
+    <!-- 顶部导航 -->
+    <header class="navbar">
+        <div class="nav-logo">
+            <img src="png/engine.png" alt="Logo" onerror="this.style.display='none'">
+            Freak Engine Chinese API
+            <span class="nav-version">v0.8.2</span>
+        </div>
+
+        <!-- 搜索框 -->
+        <div class="nav-search" id="nav-search">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+            </svg>
+            <input id="search-input" type="text" placeholder="Search docs..." autocomplete="off" spellcheck="false">
+            <kbd class="search-shortcut">/</kbd>
+            <div class="search-results" id="search-results"></div>
+        </div>
+
+        <div class="nav-right">
+            <!-- 护眼模式开关 -->
+            <button class="icon-btn" id="eye-care-btn" title="护眼模式">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+            </button>
+
+            <!-- GitHub 下拉：双作者 -->
+            <div class="gh-dropdown" id="gh-dropdown">
+                <button class="icon-btn" id="gh-toggle" title="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.7.08-.7 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.13v3.16c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+                    </svg>
+                </button>
+                <div class="gh-menu" id="gh-menu">
+                    <a href="https://github.com/mrchaoss1" target="_blank" rel="noopener" class="gh-item">
+                        <span class="gh-name">mr chaos</span>
+                        <span class="gh-role">引擎作者</span>
+                    </a>
+                    <a href="https://github.com/Citrisnow" target="_blank" rel="noopener" class="gh-item">
+                        <span class="gh-name">Citrisnow</span>
+                        <span class="gh-role">API 翻译者</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主体布局 -->
+    <div class="layout">
+        <aside class="sidebar-left" id="left-sidebar">
+            <div class="skeleton-loader">
+                <div class="skeleton-line" style="width: 80%;"></div>
+                <div class="skeleton-line" style="width: 60%;"></div>
+                <div class="skeleton-line" style="width: 70%;"></div>
+                <div class="skeleton-line" style="width: 50%;"></div>
+            </div>
+        </aside>
+
+        <main class="main-content" id="markdown-content">
+            <div class="skeleton-loader">
+                <div class="skeleton-title"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line" style="width: 80%;"></div>
+            </div>
+        </main>
+
+        <aside class="sidebar-right" id="right-sidebar">
+            <div class="toc-title">ON THIS PAGE</div>
+            <div id="toc-container"></div>
+        </aside>
+    </div>
+
+    <script src="js/markdown.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/eye-care.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
